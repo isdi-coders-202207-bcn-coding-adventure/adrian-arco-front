@@ -13,7 +13,8 @@ const CounterStyled = styled.ul`
   height: 300px;
   font-family: "Oxanium";
 
-  & .list-item {
+  .list-item {
+    font-family: "Oxanium";
     display: flex;
     flex-direction: column;
     justify-content: center;
