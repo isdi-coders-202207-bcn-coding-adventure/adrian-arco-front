@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "@fontsource/oxanium";
 
 const CounterStyled = styled.ul`
   box-sizing: border-box;
@@ -12,7 +13,7 @@ const CounterStyled = styled.ul`
   background-color: #243342;
   height: 300px;
   font-family: "Oxanium";
-
+  font-weight: bold;
   .list-item {
     font-family: "Oxanium";
     display: flex;
@@ -21,7 +22,7 @@ const CounterStyled = styled.ul`
     align-items: center;
 
     &__timer {
-      font-size: 2.5rem;
+      font-size: 2rem;
       display: flex;
       color: #243342;
       justify-content: center;
