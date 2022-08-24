@@ -13,6 +13,7 @@ jest.mock("react", () => ({
   ...jest.requireActual("react"),
   useState: () => [mockState, mockSetstate],
 }));
+
 describe("Given a Counter component", () => {
   describe("When it's instantiated", () => {
     test("Then it should render 4 list items", () => {
@@ -24,12 +25,22 @@ describe("Given a Counter component", () => {
       expect(listItems).toHaveLength(items);
       listItems.forEach((listItem) => expect(listItem).toBeInTheDocument());
     });
+
     test("And it should call the setState function", async () => {
       jest.useFakeTimers();
 
       render(<Counter />);
+
       jest.advanceTimersByTime(2000);
       expect(mockSetstate).toHaveBeenCalled();
+    });
+
+    test("And it should call the method setInterval", () => {
+      jest.spyOn(global, "setInterval");
+
+      render(<Counter />);
+
+      expect(setInterval).toHaveBeenCalledTimes(1);
     });
   });
 });
