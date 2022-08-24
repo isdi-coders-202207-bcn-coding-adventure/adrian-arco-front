@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import finalDate from "../../utils/dateCountDown";
+import finalDate from "../../utils/finalDate";
 import CounterStyled from "./Counter.Styled";
 
 const Counter = (): JSX.Element => {
