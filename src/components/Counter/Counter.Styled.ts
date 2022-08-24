@@ -11,8 +11,8 @@ const CounterStyled = styled.ul`
   padding: 0;
   gap: 20px;
   background-color: #243342;
-  height: 300px;
   font-family: "Oxanium";
+  height: 80vh;
 
   .list-item {
     font-family: inherit;
