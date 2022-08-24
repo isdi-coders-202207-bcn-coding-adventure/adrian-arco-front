@@ -1,7 +1,5 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Counter from "./Counter";
-
-import React, { useState } from "react";
 
 const mockState = {
   days: 0,
