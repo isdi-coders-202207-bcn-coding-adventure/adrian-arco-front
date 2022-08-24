@@ -16,7 +16,7 @@ jest.mock("react", () => ({
 
 describe("Given a Counter component", () => {
   describe("When it's instantiated", () => {
-    test("Then it should render 4 list items", () => {
+    test("Then it should render 4 blocks on screen", () => {
       const items = 4;
 
       render(<Counter />);
