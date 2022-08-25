@@ -1,8 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import useTimes from "../../hooks/useTimes";
 import finalDate from "../../utils/finalDate";
+
 import CounterStyled from "./Counter.Styled";
 
 const Counter = (): JSX.Element => {
+  const { getTime } = useTimes();
   const initialTime = {
     days: 0,
     hours: 0,
@@ -11,20 +14,10 @@ const Counter = (): JSX.Element => {
   };
   const [time, setTime] = useState(initialTime);
 
-  const getTime = useCallback(() => {
-    let timeLeft = finalDate - new Date().getTime() / 1000;
-    const timerCountdown = {
-      seconds: Math.floor(timeLeft % 60),
-      minutes: Math.floor((timeLeft % 3600) / 60),
-      hours: Math.floor((timeLeft % (3600 * 24)) / 3600),
-      days: Math.floor(timeLeft / (3600 * 24)),
-    };
-    setTime(timerCountdown);
-  }, []);
-
   useEffect(() => {
     setInterval(() => {
-      getTime();
+      const timeNow = new Date().getTime();
+      setTime(getTime(finalDate, timeNow));
     }, 1000);
   }, [getTime]);
 
