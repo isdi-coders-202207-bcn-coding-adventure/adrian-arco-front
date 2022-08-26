@@ -12,7 +12,7 @@ const Counter = (): JSX.Element => {
   const [time, setTime] = useState(initialTime);
 
   const getTime = useCallback(() => {
-    let timeLeft = finalDate - new Date().getTime() / 1000;
+    const timeLeft = finalDate - new Date().getTime() / 1000;
     const timerCountdown = {
       seconds: Math.floor(timeLeft % 60),
       minutes: Math.floor((timeLeft % 3600) / 60),

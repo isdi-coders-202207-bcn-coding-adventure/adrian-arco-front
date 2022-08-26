@@ -1,8 +1,10 @@
+import HeaderStyled from "./HeaderStyled";
+
 const Header = (): JSX.Element => {
   return (
-    <header className="main-header">
+    <HeaderStyled>
       <h1 className="app-title">Coding Adventure</h1>
-    </header>
+    </HeaderStyled>
   );
 };
 

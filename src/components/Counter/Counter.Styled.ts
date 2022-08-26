@@ -11,11 +11,11 @@ const CounterStyled = styled.ul`
   padding: 0;
   gap: 20px;
   background-color: #243342;
-  height: 300px;
   font-family: "Oxanium";
+  height: 80vh;
 
   .list-item {
-    font-family: "Oxanium";
+    font-family: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
